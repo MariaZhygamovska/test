@@ -1,0 +1,26 @@
+from random import randint
+
+numbers = [randint(1, 50) for i in range(60)]
+
+def p6(arr):
+    prime_numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    num1 = -1
+    num2 = -1
+    for num in arr:
+        print(num)
+        if prime_numbers.count(num) != 0:
+            if (num1 == -1): num1 = arr.index(num)
+            else: 
+                if (num2 == -1): num2 = arr.index(num)
+                else: 
+                    break
+    if num1 != -1 & num2 != -1:
+        print(num1)
+        print(num2)
+        print(num2 - num1)
+    else:
+        print (0);
+    return 0
+
+
+p6(numbers)
